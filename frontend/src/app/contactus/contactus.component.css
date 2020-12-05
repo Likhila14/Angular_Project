@@ -1,0 +1,22 @@
+.hero-imag {
+    background-image: url("C:/Users/dell/Desktop/sdpproject/frontend/src/assets/banner_contact.jpg"); /* The image used */
+  /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+  .example-card{
+    height :450px;
+    margin: 0 auto;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.example{
+   
+    margin: 0 auto;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+}

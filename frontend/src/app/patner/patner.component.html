@@ -1,0 +1,36 @@
+
+<div class = "hero-imag"></div>
+<h1 style="color: azure;text-align: center; ">PARTNER WITH US </h1>
+    <p style="text-align: center; font-size: larger;">Life Saving E rentals works with leading hospitals, experienced doctors, nurses, diagnostic centers and others to improve health 
+        outcomes for patients as well as profitability for our partners. Our strong partner relationship make 
+        deployment and 
+        speed-to-market easy to achieve. Join the growing community of Portea partners across India.</p>
+        <h2 style="margin-left: 2.5em;padding: 20px 20px 20px 20px;border-width: 5px; border-color:rgb(223, 186, 19);
+         border-style:solid;text-align: center; font-size: larger; color: rgb(223, 186, 19)">
+            Write to us at rentalsystem@lifesaving.com to discuss more</h2>
+    <h1 style="color: azure;text-align: center;top: 100px; ">OUR PATNERS</h1>
+    <div class = "">
+        <mat-grid-list cols= 3 #grid rowHeight="300px" gutterSize="5px">
+          <mat-grid-tile *ngFor ="let product of contract">
+            
+            <mat-card class="example-card">
+             <mat-card-header>
+               <div ></div>
+               <mat-card-title> </mat-card-title>
+               <mat-card-subtitle>
+               </mat-card-subtitle>
+             </mat-card-header>
+            
+             <mat-card-content>
+                <img mat-card-image style ="height: 6cm;"  src ="{{product.pic}}" alt="Photo of ">
+               </mat-card-content>
+             <mat-card-actions>
+              
+             </mat-card-actions>
+           </mat-card>
+           
+       
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    

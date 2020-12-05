@@ -1,0 +1,124 @@
+<div class="hero-imag"></div>
+<h1 style="color: azure;text-align: center; ">ABOUT US </h1>
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <div ></div>
+      <mat-card-title>
+        <h2 style="color: rgb(223, 186, 19);text-align: center; font-style: oblique; "> 
+          LIFE SAVING E RENTALS – HEALING AT HOME</h2>
+         </mat-card-title>
+      <mat-card-subtitle>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <p style = "text-align: center;">
+    Life saving E rentals Medical delivers quality care with compassion. We bring world class medical care into
+     our patients’ homes and aim to make primary healthcare not only more accessible, but also more affordable 
+     and accountable to our patients’ needs.
+  </p>
+<mat-card-content>
+  <p style = "text-align: center;"> With Life Saving E Rentals, you can be sure that you will receive hospital-quality healthcare 
+    in the comfort of your home. We provide doctors, nurses, and physiotherapists for home visits who have passed our
+     rigorous hiring standards and have had their backgrounds and medical knowledge verified by senior doctors. We facilitate
+      lab tests at home and medical equipment rentals, making health care more accessible for our patients.</p>
+   <p style = "text-align: center;">
+  Life Saving E Rentals Medical’s clinical procedures were developed in consultation with leading home healthcare professionals 
+  in the United States, ensuring that you receive only the highest quality medical care; all of our doctors are members 
+  of international medical accreditation bodies. As a result of using our services, our patients are able to stay in their 
+  homes longer, save money, and have peace of mind.</p>
+      </mat-card-content>
+    <mat-card-actions>
+  </mat-card-actions>
+  </mat-card>
+  
+  <h1 style="color: azure;text-align: center; ">MANAGEMENT TEAM </h1>
+  <div style="padding-top: 40px;"></div>
+  <div class = "">
+  <mat-grid-list cols= 3 #grid rowHeight="400px" gutterSize="30px">
+    <mat-grid-tile *ngFor ="let product of contract1">
+      
+      <mat-card class="example">
+        
+       <mat-card-header>
+        
+         <mat-card-title>
+          <img mat-card-image style ="height: 6cm; padding-top: 50px;"  src ="{{product.pic}}" alt="Photo of ">
+        {{product.name}}
+         </mat-card-title>
+         <mat-card-subtitle>
+          {{product.position}}
+         </mat-card-subtitle>
+       </mat-card-header>
+      
+       <mat-card-content>
+          {{product.description}}  
+         </mat-card-content>
+       <mat-card-actions>
+        
+       </mat-card-actions>
+     </mat-card>
+     </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div style="padding-top: 30px;"></div>
+
+<h1 style="color: azure;text-align: center; ">MEDICAL TEAM </h1>
+<div style="padding-top: 40px;"></div>
+  <div class = "">
+  <mat-grid-list cols= 3 #grid rowHeight="400px" gutterSize="30px">
+    <mat-grid-tile *ngFor ="let product of contract2">
+      
+      <mat-card class="example">
+        <img mat-card-image style ="height: 6cm; padding-top: 50px;"  src ="{{product.pic}}" alt="Photo of ">
+       <mat-card-header>
+        
+         <mat-card-title>
+         {{product.name}}
+         </mat-card-title>
+         <mat-card-subtitle>
+          {{product.position}}
+         </mat-card-subtitle>
+       </mat-card-header>
+      
+       <mat-card-content>
+          {{product.description}} 
+         </mat-card-content>
+       <mat-card-actions>
+        
+       </mat-card-actions>
+     </mat-card>
+     </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div style="padding-top: 30px;"></div>
+<h1 style="color: azure;text-align: center; ">EXTERNAL PANEL </h1>
+<div style="padding-top: 40px;"></div>
+  <div class = "">
+  <mat-grid-list cols= 3 #grid rowHeight="400px" gutterSize="30px">
+    <mat-grid-tile *ngFor ="let product of contract3">
+      
+      <mat-card class="example">
+        <img mat-card-image style ="height: 6cm;  padding-top: 50px;"  src ="{{product.pic}}" alt="Photo of ">
+       <mat-card-header>
+        
+         <mat-card-title>
+         <p style = "font-size: larger;" >{{product.name}}</p>
+         </mat-card-title>
+         <mat-card-subtitle>
+          {{product.position}}
+         </mat-card-subtitle>
+       </mat-card-header>
+      
+       <mat-card-content>
+          <p style="text-align: center;"></p>  {{product.description}} 
+         </mat-card-content>
+       <mat-card-actions>
+        
+       </mat-card-actions>
+     </mat-card>
+     </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
