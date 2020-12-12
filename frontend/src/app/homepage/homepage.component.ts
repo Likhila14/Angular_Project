@@ -15,8 +15,8 @@ export class Products{
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  public contracts ;
-  public startIndex = 0 ;
+ 
+ 
   constructor(private proservie: ProserviceService ) { }
   contract: Product[] = [
     {pic: '/assets/patner1.jpg'},
@@ -32,7 +32,7 @@ export class HomepageComponent implements OnInit {
     {pic: '/assets/mangementm2.jpg',  name : 'Vaibhav Tewari', position: 'Director ', description: 'Vaibhav has over 18 year\'s diversified experience in building new businesses across Industries such as Business Process Outsourcing, Technology and Supply Chain Management'},
   ] ;
   ngOnInit(): void {
-    this.proservie.getProducts().subscribe(data => this.contracts = data);
+
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
+
 import { AuthService } from '../auth.service';
 import { ProserviceService } from '../products/shared/proservice.service';
 
@@ -11,10 +12,12 @@ import { ProserviceService } from '../products/shared/proservice.service';
 export class MyprofileComponent implements OnInit {
   myForm: FormGroup;
   public contracts ;
+  public prof ;
   constructor(private fb: FormBuilder, private auth: AuthService) { }
 
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    this.prof  =  this.auth.userid ;
     this.myForm = this.fb.group({
       UserName: '',
       FirstName: '',
@@ -24,13 +27,22 @@ export class MyprofileComponent implements OnInit {
       phone: null ,
     });
     this.myForm.setValue({
-      UserName: 'dfgh',
-      FirstName: 'sdfgpjd',
-      LastName: 'qwsdfgb',
-      Password : 'xcfghyuio',
-      email: 'pokjhbv',
-      phone: 951745285 ,
+      UserName: this.prof.UserName,
+      FirstName: this.prof.FirstName,
+      LastName: this.prof.LastName,
+      Password : this.prof.Password,
+      email: this.prof.email,
+      phone: this.prof.phone ,
     }) ;
+
   }
+
   // tslint:disable-next-line: typedef
+  onEdit(product) {
+    this.prof =  product ;
+    this.auth.updateproduct(product) ;
+    console.log(product) ;
+    console.log('hjk') ;
+  }
+
 }

@@ -1,6 +1,15 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  .hero-image {
+    background-image: url("https://image.freepik.com/free-photo/3d-render-medical-background-with-dna-strands-connecting-dots_1048-6022.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    height: 1000px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
   /** No CSS for this example */
 .settings-card {
   height: 270px;
@@ -94,12 +103,12 @@
   width: 490px;
 }
 .div1{
-  display: none;
+ 
   flex-wrap: wrap;
   justify-content: space-around;
   margin-right: 2%;
 }
 .example-card{
-   background-color: rgb(233, 157, 15);
+   background-color: rgb(219, 119, 203);
    border: 1px wheat solid ;
 }

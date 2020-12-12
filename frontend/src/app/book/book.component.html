@@ -1,4 +1,5 @@
 
+
 <div class="hero-imag">
     <div style="padding-left: 250px; padding-top: 40px;">
   <div class="py-5" style="width: 850px; height: 600px; ">
@@ -16,21 +17,25 @@
               <div class="form-group">
                 <label for="uname1">Address</label>
                 <input formControlName="Adress" name ="Adress" type="text"  
-                 class="form-control rounded-0" required>
+                 class="form-control rounded-0" required  [ngClass] = "{'is-invalid': myForm.get('phone').touched && myForm.get('phone').invalid}">
+                 <div class="invalid-feedback">Address is required</div>
               </div>
               
               <div class="form-group">
                 <label for="uname1">No of Products needed ?</label>
-                <input formControlName="No" name ="No" type="tel"   class="form-control rounded-0" >
+                <input formControlName="No" name ="No" type="tel"   class="form-control rounded-0" required  [ngClass] = "{'is-invalid': myForm.get('No').touched && myForm.get('No').invalid}">
+                <div class="invalid-feedback">enter the number</div>
               </div>
               <div class="form-group">
                 <label for="uname1">email</label>
-                <input formControlName="email" name ="email"type="text"   class="form-control rounded-0"  required>
+                <input formControlName="email" name ="email"type="text"   class="form-control rounded-0"  required  [ngClass] = "{'is-invalid': myForm.get('email').touched && myForm.get('email').invalid}">
+                <div class="invalid-feedback">email is required</div>
               </div>
              
               <div class="form-group">
                 <label for="uname1">phone</label>
-                <input formControlName="phone" name ="phone" type="tel"   class="form-control rounded-0" >
+                <input formControlName="phone" name ="phone" type="tel"   class="form-control rounded-0" required  [ngClass] = "{'is-invalid': myForm.get('phone').touched && myForm.get('phone').invalid}">
+                <div class="invalid-feedback">phone is required</div>
               </div>
               <button (click) = "booking()" type="button"  class="btn btn-primary float-right">Book</button>
             </form>

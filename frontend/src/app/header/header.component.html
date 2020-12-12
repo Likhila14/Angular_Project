@@ -1,10 +1,10 @@
 <div class="hj">
-    <mat-toolbar style="background-color:#0fb6b6 ;">
+    <mat-toolbar style="background-color:#b36feb ;">
      
         <div style="margin-left: 0;padding: 0 4em 1em 0;">
             <div class = "nav-area">
                 <ul>
-                    <li><nav><a style="color:white; font: bold; font-size: larger;">LIFE SAVING E RENTALS</a></nav></li>
+                    <li><nav><a style="color:white; font: bold; font-size: larger;">LIFE SAVING e RENTALS</a></nav></li>
                      <li><nav><a routerLink = "../" routerLinkActive = "active" style="color: black;">home</a></nav> </li>
                     <li><nav><a routerLink = "/products" routerLinkActive = "active" style="color: black;"> products</a> </nav></li>
                     <li><nav><a routerLink = "/aboutus" routerLinkActive = "active" style="color: black;">AboutUs </a> </nav>  </li>
@@ -13,6 +13,7 @@
                     <li> <nav> <a routerLink = "/login" style="padding-left: 100px"  *ngIf="! getLoginIn()" routerLinkActive = "active" style="color: black;"> login</a> </nav> </li>
                     <li><nav><a routerLink = "/mycart" style="cursor:pointer" *ngIf=" getLoginIn()"  routerLinkActive = "active" style="color: black;"> mycart</a> </nav></li>
                     <li><nav><a routerLink = "/myprofile" style="cursor:pointer" *ngIf=" getLoginIn()"  routerLinkActive = "active" style="color: black;"> myprofile</a> </nav></li>
+                    <li><nav><a routerLink = "/admin" style="cursor:pointer" *ngIf=" getLoginIns()"  routerLinkActive = "active" style="color: black;"> admins</a> </nav></li>
                     <li><nav><a  routerLink = "/login" style="cursor:pointer ;" *ngIf=" getLoginIn()" (click)=" getLoginout()" routerLinkActive = "active" style="color: black;"> Logout</a> </nav></li>
                 </ul>
                </div>

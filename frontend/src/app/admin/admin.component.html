@@ -1,0 +1,45 @@
+<nav><a routerLink = '/payments'>
+    <h3 style = "padding-left: 1100px; padding-top:20px; color:black">OUR ORDERS</h3>
+</a></nav>
+
+<div style="padding-top: 50px ; padding-bottom: 50px;">
+
+    <mat-card class="example-card" >
+        <div style="padding-left: 280px; padding-right:200px ; padding-bottom:20px ;">
+            <nav><a routerLink = '/addpro'>
+                <button  type="button"  class="btn btn-primary">Add a Product</button>
+            </a></nav>
+       
+    </div>
+       <mat-card-content>
+       
+         <table class="table">
+           <tr>
+             <th>IMAGE</th>
+             <th>NAME</th>
+             <th>PRICE</th>
+             <th>PRODUCTS AVALIABLE</th>
+             <th></th>
+             <th></th>
+           </tr>
+           <tr *ngFor = "let product of contracts ">
+            
+              <td><img mat-card-image style ="height: 2cm; width:3cm;"  src ="{{product.pic}}" alt="Photo of "></td>
+              <td><h6 style="font:bold">{{product.name}}</h6></td> 
+            <td> <h6 style="font:bold">&#8377; {{product.price}} per month</h6></td>
+            <td> <h6 style="font:bold"> {{product.quantity}} </h6></td> 
+            <td> <nav><a routerLink = '/editpro'>
+                <button (click) =  onEdit(product) ><mat-icon>edit</mat-icon></button>
+            </a></nav></td> 
+            <td> <button (click) = onDelete(product._id) ><mat-icon>delete</mat-icon></button></td> 
+           </tr>
+         </table>
+     
+         
+         
+         </mat-card-content>
+       <mat-card-actions>
+       </mat-card-actions>
+     </mat-card>
+
+ </div>

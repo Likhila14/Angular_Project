@@ -1,45 +1,48 @@
 <div class="hero-imag">
-<div style="padding-left: 350px; padding-top: 40px;">
+<div style="padding-left: 350px; padding-top: 40px;  ">
 <div class="py-5" style="width: 600px; height: 600px; ">
     <div class="row">
       <div class="col-md-6 mx-auto">
         <span class="anchor" id="formLogin"></span>
   
         <!-- form card login -->
-        <div class="card rounded-0">
+      
+        <div class="card rounded-0" >
+          <div class="hero-imag1">
           <div class="card-header">
-            <h3 class="mb-0">LOGIN</h3>
+            <h3 class="mb-0" style="color: white;">LOGIN</h3>
           </div>
           <div class="card-body">
                  
             <form class="form" [formGroup]="myForm">
               <div class="form-group">
-                <label for="uname1">Username</label>
+                <label for="uname1" style="color: white;">
+                  Username</label>
                 <input formControlName="UserName" name ="UserName" type="text"  
                  class="form-control rounded-0" required>
               </div>
               
               <div class="form-group">
-                <label for="uname1">Password</label>
+                <label for="uname1" style="color: white;">Password</label>
                 <input formControlName="Password" name ="Password"type="password"   class="form-control rounded-0"  required>
               </div>
               <div style=" padding-left: 50px ;">
-              <button type="button"  class="btn btn-primary " style="padding-right: 10px; padding-left:10px;"> Login with Google</button> <br>
+              <button   (click) = "loginadmin()"type="button"  class="btn btn-primary " style=" padding-left:25px; text-align:left">Login as admin</button> <br>
               </div>
               <div style="padding-top: 10px; padding-left: 55px ;">
-              <button (click) = "loginUser()" type="button"  class="btn btn-primary " style="padding-right: 50px; padding-left:50px;">LOGIN</button>
+              <button (click) = "loginUser()" type="button"  class="btn btn-primary " style="padding-right: 50px; padding-left:50px;">Login</button>
               <br>
               
               <div style="padding-top: 10px; padding-left: 15px ;">
                 <nav>
                   <a routerLink = '/signin'>
-                <p>Forgot Password</p>
+                <p style="color: white; "> Forgot Password</p>
               </a>
             </nav>
               </div>
               <div style=" padding-left: 15px ;">
                 <nav>
-                  <a routerLink = '/signin'> <p>create an account</p></a>
+                  <a routerLink = '/signin'> <p style="color: white;">create an account</p></a>
                 </nav>
                
               </div>
@@ -55,7 +58,7 @@
   
       </div>
     </div>
-  
+  </div>
     </div>
   </div>
 </div>

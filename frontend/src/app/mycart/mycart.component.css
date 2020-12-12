@@ -6,6 +6,14 @@
 height: 270px;
 width: 360px;
 }
+.hero-image {
+  background-image: url("https://image.freepik.com/free-photo/3d-render-medical-background-with-dna-strands-connecting-dots_1048-6022.jpg"); /* The image used */
+  /* Used if the image is unavailable */
+  height: 1000px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
 
 .mat-card:not([class*=mat-elevation-z]) {
 padding: 16px;

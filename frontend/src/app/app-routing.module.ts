@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AddproComponent } from './addpro/addpro.component';
+import { AdminComponent } from './admin/admin.component';
+import { AllpaymentsComponent } from './allpayments/allpayments.component';
 import { AuthGuard } from './auth.guard';
 import { BookComponent } from './book/book.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { EditproComponent } from './editpro/editpro.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { MycartComponent } from './mycart/mycart.component';
@@ -29,9 +33,15 @@ const routes: Routes = [
      { path: 'myprofile', component : MyprofileComponent ,
      canActivate: [AuthGuard]
    },
+   { path: 'admin', component : AdminComponent ,
+   
+ },
    { path: 'mycart', component : MycartComponent ,
      canActivate: [AuthGuard]
    },
+   { path: 'addpro', component : AddproComponent },
+   { path: 'editpro', component : EditproComponent },
+   { path: 'payments', component : AllpaymentsComponent },
      {path : '' , redirectTo: '/products', pathMatch: 'full'},
 
 ];
@@ -42,4 +52,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [ProductsComponent, LoginComponent, SigninComponent,
-  HomepageComponent, AboutusComponent, ContactusComponent , PatnerComponent, BookComponent   ];
+  HomepageComponent, AboutusComponent, ContactusComponent , PatnerComponent, BookComponent , AdminComponent,
+  AddproComponent, EditproComponent, AllpaymentsComponent ];

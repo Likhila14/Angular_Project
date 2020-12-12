@@ -25,14 +25,17 @@ routers.post('/register',(req, res) =>{
    let user = new User(userData)
    user.save((err,registered)=>{
        if(err){
-           console.log(err)
+           console.log(err);
        }else {
            let payload = { subject: registered._id}
            let token = jwt.sign(payload, 'secretkey')
-           res.status(200).send({token})
+           res.status(200).send({token, registered});
        }
    })
 })
+
+
+
 
 //to Login
 routers.post('/login', (req, res) => {
@@ -42,82 +45,46 @@ routers.post('/login', (req, res) => {
             console.log(err)
         }else{
             if(!user){
-                res.status(401).send('Invaild Username')
+                res.status(401).send(userData)
             } else if(user.Password !== userData.Password) {
                 res.status(401).send('Invalid password')
             }else {
                 let payload = {subject: user._id}
                 let token = jwt.sign(payload , 'secretkey')
-                res.status(200).send({token})
-            }
-        }
-    })
-})
-
-//to get data of the userid
-routers.post('/log', (req, res) => {
-    let userData = req.body 
-    User.findOne({ UserName: userData.UserName}, (err, user) =>{
-        if(err){
-            console.log(err)
-        }else{
-            if(!user){
-                res.status(401).send('Invaild Username')
-            } else if(user.Password !== userData.Password) {
-                res.status(401).send('Invalid password')
-            }else {
+                res.status(200).send({token , user})
+            
                
-                res.status(200).send(userData)
             }
         }
     })
 })
 
 
-routers.post('/regist',(req, res) =>{
-    let userData = req.body
-    let user = new User(userData)
-    user.save((err,registered)=>{
-        if(err){
-            console.log(err)
-        }else {
-           
-            res.status(200).send(userData)
-        }
-    })
- })
- 
+//To UPDATE THE PROFILE
 
-//to get data of the paticular id number
-
-routers.get('/:id',(req ,res) => {
+routers.put('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
-    return res.status(400).send('No record with the given id : ${req.params.id}');
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
 
-User.findById(req.params.id, (err, docs) => {
-    if(!err){res.send(docs);}
-        else { console.log('Error in retriewing product :' + Json .stringify(err,undefined,2))}
-})
+    var emp = {  
+        UserName: res.body.UserName,
+    FirstName: res.body.FirstName,
+    LastName: res.body.LastName,
+    Password: res.body.Password,
+    email: res.body.email,
+    phone: res.body.email,
+
+    };
+    User.findByIdAndUpdate(req.params.id, { $set: emp }, { new: true }, (err, doc) => {
+        if (!err) { res.send(doc); 
+            console.log(res.body.Password)
+        }
+        else { console.log('Error in Employee Update :' + JSON.stringify(err, undefined, 2)); }
+    });
 });
 
-// update operation
-routers.put('/id',(req ,res) => {
-    if (!ObjectId.isValid(req.params.id))
-    return res.status(400).send('No record with the given id : ${req.params.id}');
-    
-    var pro = {
-        UserName: req.body.UserName,
-        FIrstName: req.body.FIrstName,
-        LastName: req.body.LastName,
-        Password: req.body.Password,
-        email: req.body.email,
-        phone: req.body.phone,
-    
-    };
-    User.findByIdAndUpdate(req.params.id, { $set: pro}, {new: true} ,(err , doc) =>{
-        if(!err){res.send(doc);}
-        else { console.log('Error in update products :' + Json .stringify(err,undefined,2))}
-    });
-  });
+
+
+
 
 module.exports = routers ;

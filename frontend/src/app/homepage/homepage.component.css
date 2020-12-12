@@ -28,6 +28,14 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
   }
+  .hero-image {
+    background-image: url("https://cdn.wallpapersafari.com/8/52/Bk2c15.jpg"); /* The image used */
+  /* Used if the image is unavailable */
+    height: 1500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
   .example-car{
     height : 150px;
     margin: 0 auto;

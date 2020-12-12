@@ -1,9 +1,17 @@
 .hero-imag {
-    background-image: url("C:/Users/dell/Desktop/sdpproject/frontend/src/assets/demo.jpg"); /* The image used */
-  /* Used if the image is unavailable */
-    height: 900px; /* You must set a specified height */
-    
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-  }
+  background-image: url("https://lh3.googleusercontent.com/proxy/ldqMFnpnCeiKROOpmyuZNydUWRZioSae_LRyuBoyAgioujyd1KIHctoetiq3iCPqxfjzs5aL9jscheCwMT7fPgouyLKbkfEL5BlSylUxhw_WxomFTb1GQ8JuECQB9EJ4lg"); /* The image used */
+/* Used if the image is unavailable */
+  height: 700px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.hero-imag1 {
+  background-image: url("https://lh3.googleusercontent.com/proxy/ldqMFnpnCeiKROOpmyuZNydUWRZioSae_LRyuBoyAgioujyd1KIHctoetiq3iCPqxfjzs5aL9jscheCwMT7fPgouyLKbkfEL5BlSylUxhw_WxomFTb1GQ8JuECQB9EJ4lg"); /* The image used */
+/* Used if the image is unavailable */
+  height: 1000px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}

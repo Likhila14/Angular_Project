@@ -17,6 +17,11 @@ export class HeaderComponent implements OnInit {
     return this.aauthService.loggedIn();
   }
   // tslint:disable-next-line: typedef
+
+  getLoginIns() {
+    return this.aauthService.loggedIns();
+  }
+  
   getLoginout(){
     return this.aauthService.logoutUser() ;
   }

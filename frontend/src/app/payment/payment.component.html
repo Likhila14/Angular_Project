@@ -1,5 +1,7 @@
+
+
 <div  align = center  style="padding-top: 50px ;">
-<h3 style="color: wheat;"> SELECT YOUR PAYMENT MOOD</h3>
+<h3 style="color: wheat;"> SELECT YOUR PAYMENT MODE</h3>
 <div class="example-button-row" style="padding-top:  20px; padding-bottom:40px ;">
           
    <button  mat-flat-button (click)="ondelivery()" style=" margin-left: 5px; padding-left:5px; padding-right: 5px;background-color: rgb(226, 224, 212);color: black;"> cash on delivery</button> 
@@ -29,21 +31,25 @@
               <div class="form-group">
                 <label for="uname1">DEBIT/CREDIT/ATM card no</label>
                 <input formControlName="Adress" name ="Adress" type="text"  
-                 class="form-control rounded-0" required>
+                 class="form-control rounded-0" required  [ngClass] = "{'is-invalid': myForm.get('Adress').touched && myForm.get('Adress').invalid}">
+                 <div class="invalid-feedback">card number is required</div>
               </div>
               
               <div class="form-group">
                 <label for="uname1">Card holder Name</label>
-                <input formControlName="No" name ="No" type="text"   class="form-control rounded-0" >
+                <input formControlName="No" name ="No" type="text"   class="form-control rounded-0" required  [ngClass] = "{'is-invalid': myForm.get('No').touched && myForm.get('No').invalid}">
+                <div class="invalid-feedback">card holder name is required</div>
               </div>
               <div class="form-group">
                 <label for="uname1">Expire month and year</label>
-                <input formControlName="email" name ="email"type="text"   class="form-control rounded-0"  required>
+                <input formControlName="email" name ="email"type="text"   class="form-control rounded-0"  required [ngClass] = "{'is-invalid': myForm.get('email').touched && myForm.get('email').invalid}">
+                <div class="invalid-feedback">this feild is required</div>
               </div>
              
               <div class="form-group">
                 <label for="uname1">cvv</label>
-                <input formControlName="phone" name ="phone" type="password"   class="form-control rounded-0" >
+                <input formControlName="phone" name ="phone" type="password"   class="form-control rounded-0"  [ngClass] = "{'is-invalid': myForm.get('phone').touched && myForm.get('phone').invalid}">
+                <div class="invalid-feedback">This feild is required</div>
               </div>
               <button (click) = "booking()" type="button"  class="btn btn-primary float-right">Pay</button>
             </form>

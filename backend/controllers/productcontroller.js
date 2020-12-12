@@ -16,6 +16,9 @@ router.get('/' , (req, res) => {
 });
 
 
+
+ 
+
 //to get data of the paticular id number
 
 router.get('/:id',(req ,res) => {
@@ -62,7 +65,9 @@ router.post('/',(req, res) => {
             pic : req.body.pic 
     };
     Product.findByIdAndUpdate(req.params.id, { $set: pro}, {new: true} ,(err , doc) =>{
-        if(!err){res.send(doc);}
+        if(!err){res.send(doc);
+            console.log(res) ;
+        }
         else { console.log('Error in update products :' + Json .stringify(err,undefined,2))}
     });
   });

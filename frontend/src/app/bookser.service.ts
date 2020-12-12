@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class BookserService {
-
+public bookid ;
  private bookurl = 'http://localhost:3000/booking/bookdata' ;
 
  constructor(private http: HttpClient ,  private router: Router) { }

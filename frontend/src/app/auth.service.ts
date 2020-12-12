@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { tokenName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,15 +8,16 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   public userid ;
- private useridlog = 'http://localhost:3000/api/log' ;
+
 
 
   private signinurl = 'http://localhost:3000/api/register' ;
 
   private loginurl = 'http://localhost:3000/api/login' ;
 
+ private idurl = 'http://localhost:3000/api' ;
 
-
+ private loginurls = 'http://localhost:3000/admin/login' ;
 
 
   // tslint:disable-next-line: typedef
@@ -34,7 +36,6 @@ export class AuthService {
 
    // tslint:disable-next-line: typedef
    loginUser(user) {
-    this.userid = user ;
     return this.http.post<any>(this.loginurl, user ) ;
    }
 
@@ -43,7 +44,9 @@ export class AuthService {
     return !!localStorage.getItem('token') ;
   }
   // tslint:disable-next-line: typedef
-
+  loggedIns(){
+    return !!localStorage.getItem('Admin') ;
+  }
 // tslint:disable-next-line: typedef
 etToken() {
     return localStorage.getItem('token');
@@ -52,9 +55,18 @@ etToken() {
   // tslint:disable-next-line: typedef
   logoutUser() {
     localStorage.removeItem('token');
+    localStorage.removeItem('User');
+    localStorage.removeItem('Admin');
     this.router.navigate(['../']);
   }
   // tslint:disable-next-line: typedef
+  updateproduct(product) {
+    console.log(this.userid._id) ;
+    return this.http.put(this.idurl + `/${this.userid._id}`, product);
+  }
 
-
+  loginAdmin(user) {
+    return this.http.post<any>(this.loginurls, user ) ;
+   }
+  
 }

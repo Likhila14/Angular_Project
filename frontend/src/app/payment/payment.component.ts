@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { BookserService } from '../bookser.service';
 import { PaymentService } from '../payment.service';
 import { ProserviceService } from '../products/shared/proservice.service';
 
@@ -10,10 +11,13 @@ export class Arr{
   bookid: string ;
   Userid: string ;
   mood: string ;
-  Adress: string ;
-  No: string ;
-  email: string ;
-  phone: string ;
+  type: string;
+  price:  number ;
+  code : number
+  no: number ;
+  name: string ;
+  expire: string ;
+  cvv: number;
 }
 @Component({
   selector: 'app-payment',
@@ -22,25 +26,30 @@ export class Arr{
 })
 export class PaymentComponent implements OnInit {
   myForm: FormGroup;
-  public arr: Arr = { productid: '' , bookid: '', mood: '' , Userid: '' , Adress: '' , No : '' , email: '' , phone: ''} ;
+  public contracts ;
+  public arr: Arr = { productid: '' , bookid: '', mood: '' , type: '', price: null,  code : null ,Userid: '' , no: null , name : '' , expire: '' , cvv: null} ;
   public productid = '' ;
+  public upicode ;
+  public userid = '';
   public debit = false ;
   public confirm = false ;
   public upi = false ;
   public code = null;
     // tslint:disable-next-line: max-line-length
-    constructor(private fb: FormBuilder , private book: PaymentService , private router: Router , private auth: AuthService , private proser: ProserviceService) { }
+    constructor(private fb: FormBuilder , private book: PaymentService , private router: Router , private auth: AuthService , private proser: ProserviceService , private books: BookserService) { }
 
     ngOnInit(): void {
-
+   this.contracts = this.proser.pro ;
        this.myForm = this.fb.group({
         productid:  '',
       Userid: '',
+      bookid: '',
       Adress: '',
       No: null,
       email: '',
       phone:  null,
       });
+      this.userid = this.auth.userid._id ;
        this.productid = this.proser.productid ;
     }
 
@@ -52,14 +61,17 @@ export class PaymentComponent implements OnInit {
       this.upi = false ;
       console.log(this.productid) ;
       this.arr.productid = this.productid ;
-      this.arr.bookid = '';
+      this.arr.Userid = this.userid ;
+      this.arr.bookid = this.books.bookid._id ;
       this.arr.mood = 'cash on delivery';
+      this.arr.type = this.proser.type ;
+      this.arr.price = this.proser.pro.price ;
       this.arr.Userid =  this.auth.userid ;
-      this.arr.Adress = this.myForm.value.Adress ;
-      this.arr.No = this.myForm.value.No ;
-      this.arr.email = this.myForm.value.email;
-      this.arr.phone = this.myForm.value.phone ;
-
+      this.arr.no = this.myForm.value.Adress ;
+     this.arr.name  = this.myForm.value.No ;
+     this.arr.expire = this.myForm.value.email;
+     this.arr.cvv = this.myForm.value.phone ;
+  
       this.book.books(this.arr).subscribe (
        res => {
          console.log(res);
@@ -76,19 +88,24 @@ export class PaymentComponent implements OnInit {
 
    // tslint:disable-next-line: typedef
    UPI(){
+    this.code = Math.floor(Math.random() * (1000000000000 - 1)) + 1;
      this.arr.mood = 'upi' ;
      this.upi = true ;
      this.debit = false ;
      this.confirm = true ;
      console.log(this.productid) ;
      this.arr.productid = this.productid ;
-     this.arr.bookid = '';
+     this.arr.Userid = this.userid ;
+     this.arr.bookid = this.books.bookid._id ;
+     this.arr.type = this.proser.type ;
+      this.arr.price = this.proser.pro.price ;
+     this.arr.code = this.code ;
      this.arr.Userid =  this.auth.userid ;
-     this.arr.Adress = this.myForm.value.Adress ;
-     this.arr.No = this.myForm.value.No ;
-     this.arr.email = this.myForm.value.email;
-     this.arr.phone = this.myForm.value.phone ;
-     this.code = Math.floor(Math.random() * (1000000000000 - 1)) + 1;
+     this.arr.no = this.myForm.value.Adress ;
+     this.arr.name  = this.myForm.value.No ;
+     this.arr.expire = this.myForm.value.email;
+     this.arr.cvv = this.myForm.value.phone ;
+  
      this.book.books(this.arr).subscribe (
        res => {
          console.log(res);
@@ -104,22 +121,33 @@ export class PaymentComponent implements OnInit {
    }
    // tslint:disable-next-line: typedef
    net(){
+    this.arr.productid = this.productid ;
+    this.arr.Userid = this.userid ;
+    this.arr.bookid = this.books.bookid._id ;
+    this.arr.type = this.proser.type ;
+     this.arr.price = this.proser.pro.price ;
      this.arr.mood = 'net baking' ;
+     this.arr.no = this.myForm.value.Adress ;
+     this.arr.name  = this.myForm.value.No ;
+     this.arr.expire = this.myForm.value.email;
+     this.arr.cvv = this.myForm.value.phone ;
+  
      this.upi = false ;
      this.debit = true ;
      this.confirm = false ;
    }
     // tslint:disable-next-line: typedef
     booking(){
-      console.log(this.productid) ;
       this.arr.productid = this.productid ;
-      this.arr.bookid = '';
+      this.arr.Userid = this.userid ;
+      this.arr.bookid = this.books.bookid._id ;
       this.arr.Userid =  this.auth.userid ;
-      this.arr.Adress = this.myForm.value.Adress ;
-      this.arr.No = this.myForm.value.No ;
-      this.arr.email = this.myForm.value.email;
-      this.arr.phone = this.myForm.value.phone ;
-
+      this.arr.no = this.myForm.value.Adress ;
+     this.arr.name  = this.myForm.value.No ;
+     this.arr.expire = this.myForm.value.email;
+     this.arr.cvv = this.myForm.value.phone ;
+  
+     console.log(this.arr);
       this.book.books(this.arr).subscribe (
        res => {
          console.log(res);

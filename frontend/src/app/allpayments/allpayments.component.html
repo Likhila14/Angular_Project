@@ -1,0 +1,37 @@
+<div style="padding-top: 50px ; padding-bottom: 50px;">
+
+    <mat-card class="example-card" >
+        <div style="padding-left: 280px; padding-right:200px ; padding-bottom:20px ;">
+            
+       
+    </div>
+       <mat-card-content>
+       
+         <table class="table">
+           <tr>
+             <th>product id</th>
+             <th>user id</th>
+             <th> booking id</th>
+             <th> price</th>
+             <th> payment mode</th>
+             <th></th>
+           </tr>
+           <tr *ngFor = "let product of product">
+            
+              <td>{{product.productid}}</td>
+              <td><h6 style="font:bold">{{product.Userid}}</h6></td> 
+            <td> <h6 style="font:bold"> {{product.bookid}} </h6></td>
+            <td> <h6 style="font:bold"> {{product.price}} </h6></td> 
+            <td> {{product.mood}}</td> 
+            <td> </td> 
+           </tr>
+         </table>
+     
+         
+         
+         </mat-card-content>
+       <mat-card-actions>
+       </mat-card-actions>
+     </mat-card>
+
+ </div>

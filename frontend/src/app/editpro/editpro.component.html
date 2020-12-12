@@ -1,0 +1,50 @@
+<div class="hero-imag">
+    <div style="padding-left: 250px; padding-top: 40px; padding-bottom: 50px;">
+  <div class="py-5" style="width: 850px; height: 600px; ">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">ADD A PRODUCT</h3>
+          </div>
+          <div class="card-body">
+            <form class="form" [formGroup]="myForm">
+              <div class="form-group">
+                <label for="uname1">id</label>
+                <input formControlName="id" name ="UserName" type="tele"  
+                 class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="uname1">name</label>
+                <input formControlName="name" name ="FirstName" type="text"  class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="uname1">Price</label>
+                <input formControlName="price" name ="LastName" type="text"   class="form-control rounded-0" >
+              </div>
+              <div class="form-group">
+                <label for="uname1">No Of Products Avaliable</label>
+                <input formControlName="quantity" name ="Password"type="tele"   class="form-control rounded-0"  required>
+              </div>
+              <div class="form-group">
+                <label for="uname1">Image URL</label>
+                <input formControlName="pic" name ="email" type="text"  class="form-control rounded-0" required>
+              </div>
+             
+              <button (click) = "onEdit(myForm.value)" type="button"  class="btn btn-primary float-right">SAVE</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+    </div>
+    </div>
+  </div>
+  </div>
+

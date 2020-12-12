@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width = device-width , initial-scale = 1.0">
   <title>Lifre Saving E Rentals</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,16 +16,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-  (function(d, m){
-      var kommunicateSettings = 
-          {"appId":"39e5acf21735ea79968b154ef3c23b4aa","popupWidget":true,"automaticChatOpenOnNavigation":true};
-      var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-      var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-      window.kommunicate = m; m._globals = kommunicateSettings;
-  })(document, window.kommunicate || {});
-/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "4d508cb8-c531-47d6-9a86-be979c7df53e", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "d9f602b5-309f-4c41-9a82-3bffc6170115", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
 </script>
+
 </body>
 </html>

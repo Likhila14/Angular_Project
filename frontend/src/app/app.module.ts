@@ -6,7 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import {A11yModule} from '@angular/cdk/a11y';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {PortalModule} from '@angular/cdk/portal';
 import {CdkStepperModule} from '@angular/cdk/stepper';
@@ -68,6 +68,10 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
 import { MycartComponent } from './mycart/mycart.component';
 import { BookComponent } from './book/book.component';
 import { PaymentComponent } from './payment/payment.component';
+import { AdminComponent } from './admin/admin.component';
+import { AddproComponent } from './addpro/addpro.component';
+import { EditproComponent } from './editpro/editpro.component';
+import { AllpaymentsComponent } from './allpayments/allpayments.component';
 
 
 
@@ -90,10 +94,15 @@ import { PaymentComponent } from './payment/payment.component';
     MycartComponent,
     BookComponent,
     PaymentComponent,
+    AdminComponent,
+    AddproComponent,
+    EditproComponent,
+    AllpaymentsComponent,
 
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
